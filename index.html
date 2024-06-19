@@ -15,8 +15,117 @@
         <p>A Longitudinal study of racing strategy in Mario Kart 8 based on data collected by me and my friends.</p>
     </div>
     <div class="row">
-        <div class="side">...</div>
-        <div class="main">...</div>
+        <div class="side">
+          <h1>The Data</h1>
+          <p>A Longitudinal study of racing strategy in Mario Kart 8 based on data collected by me and my friends.</p>
+        </div>
+        <div class="main" id="iconBrowser">
+          <div class="column">
+            <div class="dataIconRow">
+              <container class="bigIcon" id="playerIconBig">
+                <img src="/Custom icons/Player Icon.png" class="iconImage"></img>
+                <p class="iconText">Player</p>
+              </container>
+              <container class="bigIcon" id="characterIconBig">
+                <img src="/Custom icons/Character Icon.png" class="iconImage"></img>
+                <p class="iconText">Character</p>
+              </container>
+              <container class="bigIcon" id="vehicleIconBig">
+                <img src="/Custom icons/Vehicle Icon.png" class="iconImage"></img>
+                <p class="iconText">Vehicle</p>
+              </container>
+              <container class="bigIcon" id="wheelsIconBig">
+                <img src="/Custom icons/Wheel Icon.png" class="iconImage"></img>
+                <p class="iconText">Wheels</p>
+              </container>
+              <container class="bigIcon" id="gliderIconBig">
+                <img src="/Custom icons/Glider Icon.png" class="iconImage"></img>
+                <p class="iconText">Glider</p>
+              </container>
+              <container class="bigIcon" id="mapIconBig">
+                <img src="/Custom icons/Map Icon.png" class="iconImage"></img>
+                <p class="iconText">Map</p>
+              </container>
+            </div>
+            <div class="dataIconRow">
+              <container class="bigIcon" id="placementIconBig">
+                <img src="/Custom icons/Placement Icon.png" class="iconImage"></img>
+                <p class="iconText">Placement</p>
+              </container>
+              <container class="bigIcon" id="colorIconBig">
+                <img src="/Custom icons/Controller Icon.png" class="iconImage"></img>
+                <p class="iconText">Controller Color</p>
+              </container>
+              <container class="bigIcon" id="ccIconBig">
+                <img src="/Custom icons/CC Icon.png" class="iconImage"></img>
+                <p class="iconText">CC</p>
+              </container>
+              <container class="bigIcon" id="COMIconBig">
+                <img src="/Custom icons/COM icon.png" class="iconImage"></img>
+                <p class="iconText">COM</p>
+              </container>
+              <container class="bigIcon" id="autosteerIconBig">
+                <img src="/Custom icons/Auto Steer icon.png" class="iconImage"></img>
+                <p class="iconText">Auto Steer</p>
+              </container>
+              <container class="bigIcon" id="sticksteerIconBig">
+                <img src="/Custom icons/Stick Steer Icon.png" class="iconImage"></img>
+                <p class="iconText">Stick Steer</p>
+              </container>
+            </div>
+            <div class="dataIconRow">
+              <container class="bigIcon" id="autodriveIconBig">
+                <img src="/Custom icons/Auto Drive Icon.png" class="iconImage"></img>
+                <p class="iconText">Auto Drive</p>
+              </container>
+              <container class="bigIcon" id="randomizedIconBig">
+                <img src="/Custom icons/Randomized Icon.png" class="iconImage"></img>
+                <p class="iconText">Randomized</p>
+              </container>
+              <container class="bigIcon" id="racercountIconBig">
+                <img src="/Custom icons/Racer Count Icon.png" class="iconImage"></img>
+                <p class="iconText">Racer Count</p>
+              </container>    
+              <container class="bigIcon" id="dateIconBig">
+                <img src="/Custom icons/Calendar Icon.png" class="iconImage"></img>
+                <p class="iconText">Date</p>
+              </container>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="main">
+        </div>
+        <div class="side">
+          <h1>The Analysis</h1>
+        </div>
       </div>
 </body>
 </html>
+
+<script>
+  var hoveringIcon = false
+  var iconsArray = document.getElementById("iconBrowser").querySelectorAll('*[id]')
+  var highlightedIndex = 0
+
+  function highlightIcon(index){
+    if (!hoveringIcon) {
+      console.log(iconsArray[index])
+      iconsArray[index].classList.replace("bigIcon", "bigIconHighlighted")
+      highlightedIndex = index
+    }
+    setTimeout(function() { unhighlightIcon(index) }, 3000)
+  }
+
+  function unhighlightIcon(index){
+    iconsArray[index].classList.replace("bigIconHighlighted", "bigIcon")
+    nextIndex = index+1
+    if (nextIndex >= iconsArray.length) {
+      nextIndex = 0;
+    }
+    setTimeout(function() { highlightIcon(nextIndex) }, 2000)
+  }
+
+  highlightIcon(0)
+</script>

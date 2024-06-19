@@ -77,3 +77,54 @@
       width: 100%;
     }
   }
+
+  .dataIconRow {
+    width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .bigIcon {
+    padding: 15px;
+    margin: 0px;
+    width: 120px;
+    height: 120px;
+    text-align: center;
+    font-size: 16px;
+    margin: 0;
+    transition: all 1s;
+  }
+
+  .bigIcon:hover {
+    width: 150px;
+    height: 150px;
+    font-size: 20px;
+  }
+
+  .bigIconHighlighted {
+    padding: 15px;
+    margin: 0px;
+    width: 150px;
+    height: 150px;
+    font-size: 20px;
+    text-align: center;
+    margin: 0;
+    transition: all 1s;
+  }
+
+  .iconImage {
+    height: 60%;
+    width: 60%;
+    object-fit: scale-down;
+    align-self: center;
+  }
+
+  .iconText {
+    margin: 5px;
+  }
+
+
+
+  
+
