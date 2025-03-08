@@ -1,130 +1,431 @@
-.header {
-    padding: 80px; /* some padding */
-    text-align: center; /* center the text */
-    background: #e4000F; /* green background */
-    color: white; /* white text color */
-  }
-  
-  /* Increase the font size of the <h1> element */
-  .header h1 {
-    font-size: 40px;
-  }
+body,
+html {
+  height: 100%;
+  margin: 0px;
+}
 
-  /* Style the top navigation bar */
+.parallax {
+  /* Full height */
+  height: 100%;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.Header {
+  display: flex;
+  height: 100%;
+  padding-top: 100px;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+
+.emptyHeaderBackground {
+  background-image: url("../Backgrounds/Empty Background.png");
+}
+
+.otherBackground {
+  background-image: url("../Backgrounds/Switch Background 2.png");
+}
+
+.headerCenter h1 {
+  font-size: 60px;
+}
+
+.headerDescription {
+  width: 70%;
+  line-height: 1.5em;
+  font-size: 1.5em;
+  vertical-align: middle;
+}
+
+.scrollDown {
+  height: 5%;
+  width: 10%;
+  animation: reveal 1s ease-in;
+  animation-delay: 4s;
+  opacity: 0;
+}
+
+@keyframes reveal {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
+/* Style the top navigation bar */
 .navbar {
-    overflow: hidden; /* Hide overflow */
-    background-color: #333; /* Dark background color */
-  }
-  
-  /* Style the navigation bar links */
-  .navbar a {
-    float: left; /* Make sure that the links stay side-by-side */
-    display: block; /* Change the display to block, for responsive reasons (see below) */
-    color: white; /* White text color */
-    text-align: center; /* Center the text */
-    padding: 14px 20px; /* Add some padding */
-    text-decoration: none; /* Remove underline */
-  }
-  
-  /* Right-aligned link */
-  .navbar a.right {
-    float: right; /* Float a link to the right */
-  }
-  
-  /* Change color on hover/mouse-over */
-  .navbar a:hover {
-    background-color: #ddd; /* Grey background color */
-    color: black; /* Black text color */
-  }
+  overflow: hidden; /* Hide overflow */
+  background-color: #333; /* Dark background color */
+}
 
-  /* Ensure proper sizing */
+/* Style the navigation bar links */
+.navbar a {
+  float: left; /* Make sure that the links stay side-by-side */
+  display: block; /* Change the display to block, for responsive reasons (see below) */
+  color: white; /* White text color */
+  text-align: center; /* Center the text */
+  padding: 14px 20px; /* Add some padding */
+  text-decoration: none; /* Remove underline */
+}
+
+/* Right-aligned link */
+.navbar a.right {
+  float: right; /* Float a link to the right */
+}
+
+/* Change color on hover/mouse-over */
+.navbar a:hover {
+  background-color: #ddd; /* Grey background color */
+  color: black; /* Black text color */
+}
+
+/* Ensure proper sizing */
 * {
-    box-sizing: border-box;
-  }
-  
-  /* Column container */
-  .row {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  
-  /* Create two unequal columns that sits next to each other */
-  /* Sidebar/left column */
-  .side {
-    flex: 30%; /* Set the width of the sidebar */
-    background-color: #f1f1f1; /* Grey background color */
-    padding: 20px; /* Some padding */
-  }
-  
-  /* Main column */
-  .main {
-    flex: 70%; /* Set the width of the main content */
-    background-color: white; /* White background color */
-    padding: 20px; /* Some padding */
-  }
+  box-sizing: border-box;
+}
 
-  /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+/* Column container */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+  flex: 30%; /* Set the width of the sidebar */
+  /* background-color: #f1f1f1; /* Grey background color */
+  padding: 20px; /* Some padding */
+  text-align: center;
+  align-items: center;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  line-height: 250%;
+}
+
+.side h1 {
+  margin-top: 20%;
+}
+
+/* Main column */
+.main {
+  flex: 70%; /* Set the width of the main content */
+  background-color: white; /* White background color */
+  padding: 20px; /* Some padding */
+  margin: auto;
+}
+
+.locked1 {
+  min-height: 450px;
+  justify-content: center;
+}
+
+.locked2 {
+  min-height: 530px;
+  justify-content: center;
+}
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 700px) {
-    .row {
-      flex-direction: column;
-    }
+  .row {
+    flex-direction: column;
   }
-  
-  /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
-  @media screen and (max-width: 400px) {
-    .navbar a {
-      float: none;
-      width: 100%;
-    }
-  }
+}
 
-  .dataIconRow {
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .navbar a {
+    float: none;
     width: 100%;
-    align-items: center;
-    display: flex;
-    justify-content: space-around;
   }
+}
 
-  .bigIcon {
-    padding: 15px;
-    margin: 0px;
-    width: 120px;
-    height: 120px;
-    text-align: center;
-    font-size: 16px;
-    margin: 0;
-    transition: all 1s;
+.iconRow {
+  width: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+}
+
+.bigIcon {
+  padding: 15px;
+  margin: 0px;
+  width: 130px;
+  height: 130px;
+  text-align: center;
+  font-size: 16px;
+  margin: 0;
+  transition: all 1s;
+}
+
+.bigIcon:hover {
+  width: 150px;
+  height: 150px;
+  font-size: 20px;
+}
+
+.bigIconHighlighted {
+  padding: 15px;
+  margin: 0px;
+  width: 150px;
+  height: 150px;
+  font-size: 20px;
+  text-align: center;
+  margin: 0;
+  transition: all 1s;
+}
+
+.iconImage {
+  height: 60%;
+  width: 60%;
+  object-fit: scale-down;
+  align-self: center;
+}
+
+.iconText {
+  margin: 5px;
+}
+
+.animatedIcon {
+  text-align: center;
+  font-size: 40px;
+}
+
+.arrow {
+  height: 75px;
+  width: 125px;
+}
+
+.randomDice {
+  height: 80px;
+  width: 80px;
+  object-fit: scale-down;
+  align-self: center;
+  animation: rollDice 18s infinite ease-in-out;
+}
+
+@keyframes rollDice {
+  3% {
+    width: 40px;
+    height: 40px;
   }
+  16.5% {
+    transform: translate3d(0, -50px, 0) rotate(180deg);
+  }
+  30% {
+    width: 40px;
+    height: 40px;
+  }
+  33% {
+    width: 80px;
+    height: 80px;
+    transform: translate3d(0, 0, 0) rotate(360deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 
-  .bigIcon:hover {
+.steeringWheel {
+  height: 100px;
+  width: 100px;
+  object-fit: scale-down;
+  align-self: center;
+  animation: spin 18s infinite ease-in-out;
+  animation-delay: 6s;
+}
+
+@keyframes spin {
+  3% {
     width: 150px;
     height: 150px;
-    font-size: 20px;
   }
-
-  .bigIconHighlighted {
-    padding: 15px;
-    margin: 0px;
+  9.9% {
+    transform: rotate(-50deg);
+  }
+  16.5% {
+    transform: rotate(100deg);
+  }
+  26.4% {
+    transform: rotate(-70deg);
+  }
+  29.7% {
+    transform: rotate(0deg);
     width: 150px;
     height: 150px;
-    font-size: 20px;
+  }
+  33% {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+.collectDataPage {
+  position: relative;
+  z-index: 2;
+  height: 100px;
+  width: 100px;
+  object-fit: scale-down;
+  align-self: center;
+  animation: growPage 18s infinite ease-in-out;
+  animation-delay: 12s;
+}
+
+@keyframes growPage {
+  3% {
+    width: 150px;
+    height: 150px;
+  }
+  29.7% {
+    width: 150px;
+    height: 150px;
+  }
+  33% {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+.collectDataPen {
+  position: relative;
+  z-index: 1;
+  height: 80px;
+  width: 15px;
+  rotate: rotate(0deg);
+  animation: write 18s infinite;
+  animation-delay: 12s;
+}
+
+@keyframes write {
+  3% {
+    left: 0px;
+    top: 0px;
+  }
+  5% {
+    left: -110px;
+    top: -110px;
+    transform: rotate(30deg);
+  }
+  10% {
+    left: -40px;
+    top: -110px;
+  }
+  13% {
+    left: -110px;
+    top: -80px;
+  }
+  20% {
+    left: -40px;
+    top: -80px;
+  }
+  23% {
+    left: -110px;
+    top: -50px;
+  }
+  30% {
+    left: -40px;
+    top: -50px;
+  }
+  31% {
+    transform: rotate(30deg);
+  }
+  33% {
+    transform: rotate(0.1deg);
+    left: 0px;
+    top: 0px;
+  }
+}
+
+.loadout {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+
+  .loadout-component {
+    width: 200px;
+    justify-content: center;
     text-align: center;
-    margin: 0;
-    transition: all 1s;
+    position: relative;
+    transition: 0.25s ease;
+
+    .loadout-image {
+      width: 100px;
+      height: 100px;
+      object-fit: scale-down;
+      align-self: center;
+    }
   }
 
-  .iconImage {
-    height: 60%;
-    width: 60%;
-    object-fit: scale-down;
-    align-self: center;
+  .loadout-component-overlay {
+    justify-content: center;
+    text-align: center;
+    position: absolute;
+    opacity: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: 0.25s ease;
+    color: white;
+    font-size: 20px;
+    padding: 20px;
+
+    .button {
+      background-color: #555555;
+      border: none;
+      border-radius: 0.5em;
+      color: white;
+      padding: 10px 15px;
+      text-align: center;
+      text-decoration: none;
+      font-size: 16px;
+      width: 55%;
+      margin: 5px;
+    }
+
+    .button:hover {
+      background-color: #777777;
+    }
   }
 
-  .iconText {
-    margin: 5px;
+  .loadout-component-overlay:hover {
+    opacity: 1;
   }
+}
 
+.button {
+  background-color: #555555;
+  border: none;
+  border-radius: 0.5em;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
 
+.button:hover {
+  background-color: #777777;
+}
 
-  
+.center {
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  -ms-transform: translateX(50%);
+  transform: translateX(50%);
+}
 
+.bottom-padded {
+  margin-bottom: 50px;
+}

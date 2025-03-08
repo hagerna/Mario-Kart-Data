@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="../styles.css" />
+  <head>
+    <script type="text/javascript" src="../Helpers/loadouts.js"></script>
+  </head>
+  <body>
+    <div class="navbar">
+      <a href="../index.html">Home</a>
+      <a href="data.html">The Data</a>
+      <a href="process.html">The Process</a>
+      <a href="analysis.html">The Analysis</a>
+      <a href="#creator" class="right">The Creator</a>
+    </div>
+    <div
+      class="parallax emptyHeaderBackground"
+      style="background-image: url('../Backgrounds/Empty Background.png')"
+    >
+      <div class="Header">
+        <h1>The Process</h1>
+        <p class="headerDescription">
+          In order to break up our routine and not just pick our favorites each
+          time, I created an algorithm to randomly select the Character,
+          Vehicle, Wheels, and Glider for each person to race with. This
+          randomization was also done to avoid any unconscious bias in
+          selection.
+          <br />
+          <br />
+          Create a loadout for yourself below!
+          <br />
+          <br />
+          Worth noting is that the pool for random selections has remained
+          unchanged since its creation in order to preserve the validity of the
+          "study". In other words, any characters, vehicles, wheels, or gliders
+          unlocked while collecting data have not been added.
+        </p>
+      </div>
+    </div>
+    <div class="row bottom-padded">
+      <div class="side">
+        <h1>Loadout Randomizer</h1>
+        <h3>
+          Generate
+          <select id="loadout-count">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select>
+          Random Loadout(s)
+        </h3>
+        <button class="button" onclick="generateLoadouts()">Go!</button>
+      </div>
+      <div class="main" id="loadouts"></div>
+    </div>
+    <div
+      class="parallax emptyHeaderBackground"
+      style="background-image: url('../Backgrounds/Switch Background 2.png')"
+    >
+      <div class="Header">
+        <h1>Contribute Your Results</h1>
+        <p class="headerDescription">
+          <br />
+          If you'd like to contribute your own race results to be analyzed, use
+          the google form below.
+        </p>
+        <button
+          class="button"
+          onclick="window.open(`https:/\/docs.google.com/forms/d/e/1FAIpQLSdPzG-7GM0M13Ia6exX_DUGUcZgONy9gUi_0R9TqlsmIOKE7Q/viewform?usp=dialog','_blank`)"
+        >
+          Open Form
+        </button>
+      </div>
+    </div>
+  </body>
+</html>
