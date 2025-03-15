@@ -33,6 +33,48 @@
           number of racers that competed, and the date on which we raced.
         </p>
       </div>
+      <div class="page-body">
+        <h1>Data Collected</h1>
+        <button class="accordion">Player</button>
+        <div class="panel">
+          <div class="row">
+            <div class="side">
+              <p>Description</p>
+            </div>
+            <div class="main">
+              <h1>Main Display</h1>
+            </div>
+          </div>
+        </div>
+        <button class="accordion">Player</button>
+        <div class="panel">
+          <div class="row">
+            <div class="side">
+              <p>Description</p>
+            </div>
+            <div class="main">
+              <h1>Main Display</h1>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
+
+  <script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+          panel.style.maxHeight = null;
+        } else {
+          panel.style.maxHeight = panel.scrollHeight + "px";
+        }
+      });
+    }
+  </script>
 </html>
