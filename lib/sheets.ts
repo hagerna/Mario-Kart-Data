@@ -1,10 +1,10 @@
 import { google, sheets_v4 } from "googleapis";
-import keys from "../spreadsheets-keys.json";
 import { Race_Entry } from "./definition";
 
 var sheets: sheets_v4.Sheets;
 
 async function initSheets() {
+  let keys = JSON.parse(process.env.SHEETS_SECRET!);
   const auth = await google.auth.getClient({
     projectId: keys.project_id,
     credentials: {
@@ -17,13 +17,12 @@ async function initSheets() {
     },
     scopes: ["https://www.googleapis.com/auth/spreadsheets"],
   });
-
   sheets = google.sheets({ version: "v4", auth });
 }
 
 export async function fetchRaces() {
   if (!sheets) {
-    initSheets();
+    await initSheets();
   }
   try {
     // copy your spreadshset id here
