@@ -1,10 +1,10 @@
 import { google, sheets_v4 } from "googleapis";
 import { Race_Entry } from "./definition";
 
-var sheets: sheets_v4.Sheets;
+let sheets: sheets_v4.Sheets;
 
 async function initSheets() {
-  let keys = JSON.parse(process.env.SHEETS_SECRET!);
+  const keys = JSON.parse(process.env.SHEETS_SECRET!);
   const auth = await google.auth.getClient({
     projectId: keys.project_id,
     credentials: {
